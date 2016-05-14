@@ -1,6 +1,7 @@
 package View;
 
 import Controller.InserirDados;
+import Controller.MetodoDeOrdenacao.BinaryInsertionSort;
 import Model.Pessoa;
 import java.io.File;
 import java.io.IOException;
@@ -47,6 +48,12 @@ public class CadastroPessoaPeso {
                 num += "Nome: " + pessoa.getNome() + " Peso: " + pessoa.getPeso() + " \n";
             }
             JOptionPane.showMessageDialog(null, num);
+        }
+        
+        BinaryInsertionSort bis = new BinaryInsertionSort();
+        List<Pessoa> lstPessoaOrdenada = bis.Ordenar(lstPessoa);
+        for (Pessoa pessoa : lstPessoaOrdenada) {
+            System.out.println("Peso: " + pessoa.getPeso() + pessoa.getNome());
         }
         
     }
