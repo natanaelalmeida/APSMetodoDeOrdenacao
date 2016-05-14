@@ -20,8 +20,7 @@ public class CadastroPessoaPeso {
         if (Integer.valueOf(op) == 1){
             JOptionPane.showMessageDialog(null, "Para cancelar adição de elemntos, digite 0: ");
             int control = 1;
-            
-            
+                        
             while(control != 0){
                 Pessoa pessoa = new Pessoa();               
                 pessoa.setNome(JOptionPane.showInputDialog("Nome:"));
@@ -33,10 +32,8 @@ public class CadastroPessoaPeso {
                 num += "Nome: " + pessoa.getNome() + " Peso: " + pessoa.getPeso() + " \n";
             }
             JOptionPane.showMessageDialog(null, num);
-            
-            
-            
-        }else{
+                                    
+        }else {
             JFileChooser path = new JFileChooser();
             path.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int var = path.showSaveDialog(null);

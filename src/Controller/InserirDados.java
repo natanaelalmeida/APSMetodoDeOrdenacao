@@ -15,8 +15,7 @@ public class InserirDados {
         
         if (pessoa != null){
             this.lstPessoa.add(pessoa);                   
-        }
-        
+        }        
         return lstPessoa;
     }
     
@@ -36,7 +35,5 @@ public class InserirDados {
         }
         
         return lstPessoa;
-    }
-    
-    
+    }        
 }
