@@ -2,6 +2,9 @@ package View;
 
 import Controller.InserirDados;
 import Controller.MetodoDeOrdenacao.BinaryInsertionSort;
+import Controller.MetodoDeOrdenacao.BubbleSort;
+import Controller.MetodoDeOrdenacao.QuickSort;
+import Controller.MetodoDeOrdenacao.SelectionSort;
 import Model.Pessoa;
 import java.io.File;
 import java.io.IOException;
@@ -50,11 +53,43 @@ public class CadastroPessoaPeso {
             JOptionPane.showMessageDialog(null, num);
         }
         
+        List<Pessoa> lstPessoaOrdenada;
+                
+        QuickSort qs = new QuickSort();
         BinaryInsertionSort bis = new BinaryInsertionSort();
-        List<Pessoa> lstPessoaOrdenada = bis.Ordenar(lstPessoa);
+        SelectionSort ss = new SelectionSort();
+        BubbleSort bs = new BubbleSort();
+        
+        
+        
+        System.out.println("BinaryInsertion: \n");
+        
+        lstPessoaOrdenada = bis.Ordenar(lstPessoa);
         for (Pessoa pessoa : lstPessoaOrdenada) {
-            System.out.println("Peso: " + pessoa.getPeso() + pessoa.getNome());
+            System.out.println("Nome: "  + pessoa.getNome()+ " Peso: " + pessoa.getPeso());
         }
         
+        System.out.println("Selection: \n");
+        
+        lstPessoaOrdenada = ss.Ordenar(lstPessoa);
+        for (Pessoa pessoa : lstPessoaOrdenada) {
+            System.out.println("Nome: "  + pessoa.getNome()+ " Peso: " + pessoa.getPeso());
+            
+        }
+                
+        System.out.println("QuickSort: \n");
+        
+        lstPessoaOrdenada = qs.Ordenar(lstPessoa);
+        for (Pessoa pessoa : lstPessoaOrdenada) {
+            System.out.println("Nome: "  + pessoa.getNome()+ " Peso: " + pessoa.getPeso());
+            
+        }
+        
+        System.out.println("BubbleSort: \n");
+        lstPessoaOrdenada = bs.Ordenar(lstPessoa);
+        for (Pessoa pessoa : lstPessoaOrdenada) {
+            System.out.println("Nome: "  + pessoa.getNome()+ " Peso: " + pessoa.getPeso());
+            
+        }
     }
 }
