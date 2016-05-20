@@ -32,6 +32,7 @@ public class UIComponentesViewPrincipal extends JFrame {
     public JButton btnCancelar = new JButton("");
     public JButton btnDiretorio = new JButton("");
     public JComboBox cmbTipoOrdenacao = new JComboBox();
+    public static JLabel lblNewLabel;
     
     public UIComponentesViewPrincipal(){
         setTitle("Organiza\u00E7\u00E3o de pessoas por peso");
@@ -61,7 +62,7 @@ public class UIComponentesViewPrincipal extends JFrame {
         panel_2.setLayout(null);
 		
         btnAdicionar.setBackground(Color.WHITE);
-        btnAdicionar.setIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Plus-15.png"));
+        btnAdicionar.setIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Plus-15.png"));
         btnAdicionar.setBounds(526, 24, 26, 20);
         panel_2.add(btnAdicionar);
 		
@@ -91,12 +92,12 @@ public class UIComponentesViewPrincipal extends JFrame {
         panel_2.add(txtCaminho);
 		
         btnDiretorio.setBackground(Color.WHITE);
-        btnDiretorio.setIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Folder-15.png"));
-        btnDiretorio.setSelectedIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Open Folder-15.png"));
+        btnDiretorio.setIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Folder-15.png"));
+        btnDiretorio.setSelectedIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Open Folder-15.png"));
         btnDiretorio.setBounds(490, 48, 26, 23);
         panel_2.add(btnDiretorio);
 		
-        btnImportar.setIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Downloading Updates-15 (1).png"));
+        btnImportar.setIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Downloading Updates-15 (1).png"));
         btnImportar.setBackground(Color.WHITE);
         btnImportar.setBounds(526, 48, 26, 23);
         panel_2.add(btnImportar);
@@ -142,7 +143,7 @@ public class UIComponentesViewPrincipal extends JFrame {
         lblTempoDeDurao.setBounds(282, 105, 197, 14);
         panel.add(lblTempoDeDurao);
 		
-        JLabel lblNewLabel = new JLabel("00:00");
+        lblNewLabel = new JLabel("00 ms");
         lblNewLabel.setForeground(Color.RED);
         lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 11));
         lblNewLabel.setBackground(Color.WHITE);
@@ -153,11 +154,11 @@ public class UIComponentesViewPrincipal extends JFrame {
         pbrProgresso.setBounds(10, 406, 562, 25);
         panel.add(pbrProgresso);
 				
-        btnOrdenar.setIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Replace-30.png"));
+        btnOrdenar.setIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Replace-30.png"));
         btnOrdenar.setBounds(509, 453, 63, 39);
         contentPane.add(btnOrdenar);
 	    		
-        btnCancelar.setIcon(new ImageIcon("..\\APS MetodoOrdenacao\\Layout\\Delete-30.png"));
+        btnCancelar.setIcon(new ImageIcon("..\\APSMetodoDeOrdenacao\\Layout\\Delete-30.png"));
         btnCancelar.setBounds(436, 453, 63, 39);
         contentPane.add(btnCancelar);
     }

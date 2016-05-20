@@ -7,6 +7,7 @@ import Controller.MetodoDeOrdenacao.QuickSort;
 import Controller.MetodoDeOrdenacao.SelectionSort;
 import Model.Pessoa;
 import UI.UIComponentesViewPrincipal;
+import com.sun.javafx.css.Rule;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -16,6 +17,7 @@ import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.View;
 
 public class Principal extends UIComponentesViewPrincipal {
 
@@ -26,7 +28,10 @@ public class Principal extends UIComponentesViewPrincipal {
     private final BubbleSort bs = new BubbleSort();
     private Pessoa pessoa;
     private List<Pessoa> lstPessoa;
-
+    private long tempInic;
+    private long tempFinal;
+    private long tempTotal;
+    
     public Principal() {
         setVisible(true);        
         StatusButton(false);
@@ -123,17 +128,34 @@ public class Principal extends UIComponentesViewPrincipal {
         switch(value)
         {
             case "BinaryInsertionSort" :
+                tempInic = System.currentTimeMillis();
                 AtualizaDados(bis.Ordenar(lstPessoa));
+                tempFinal = System.currentTimeMillis();
+                tempTotal = tempFinal - tempInic;
+                UIComponentesViewPrincipal.lblNewLabel.setText(Long.toString(tempTotal)+" ms");
                 break;
             case "BubbleSort" :
+                tempInic = System.currentTimeMillis();
                 AtualizaDados(bs.Ordenar(lstPessoa));
+                tempFinal = System.currentTimeMillis();
+                tempTotal = tempFinal - tempInic;
+                UIComponentesViewPrincipal.lblNewLabel.setText(Long.toString(tempTotal)+" ms");
                 break;
             case "QuickSort" :
+                tempInic = System.currentTimeMillis();
                 AtualizaDados(qs.Ordenar(lstPessoa));
+                tempFinal = System.currentTimeMillis();
+                tempTotal = tempFinal - tempInic;
+                UIComponentesViewPrincipal.lblNewLabel.setText(Long.toString(tempTotal)+" ms");
                 break;
             case "SelectionSort" :
+                tempInic = System.currentTimeMillis();
                 AtualizaDados(ss.Ordenar(lstPessoa));
+                tempFinal = System.currentTimeMillis();
+                tempTotal = tempFinal - tempInic;
+                UIComponentesViewPrincipal.lblNewLabel.setText(Long.toString(tempTotal)+" ms");
                 break;
+                
         }
         
         MensagemSucesso("Ordenação efetuada com sucesso.");
